@@ -1,11 +1,10 @@
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+$(function(){
+  //validating the sign_up_form
 $( "#sign_up_form" ).validate({
   rules: {
-    username: {
+    Name: {
       required: true,
-      name: true
+
     }
 , email: {
   required: true,
@@ -13,4 +12,18 @@ $( "#sign_up_form" ).validate({
 }
 
   }
+});
+//function for checking if the form is valid or not
+function valid_sign_up(){
+  if(($( "#sign_up_form" ).valid())==true) {
+    alert("true");
+  return true;}
+    else
+    {   alert("false");
+      return false;
+}
+}
+//validating the sign in form
+
+
 });
