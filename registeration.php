@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {
+    background-color:lightblue ;
+	font-size: 40px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+label {
+	color:green;
+    font-family: verdana;
+    font-size: 20px;
+}
+</style>
 <title> Registeration system  </title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -34,6 +51,7 @@
 </div>
 </div>
 </div>
+
 <div class="sign_in" name="sign_in" >
   <h2>Sign in </h2>
 <form method="post" action="login.php" id="sign_in_form">
