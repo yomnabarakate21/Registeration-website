@@ -1,5 +1,5 @@
 <?php
-
+        session_start();
         $name = $_POST["Name"];
         $password_1 = $_POST["password"];
 
@@ -24,7 +24,9 @@ $result_id = $conn->query($sql_dept_id);
 echo $result_id;
           if( $result_id=="")
           {
-            echo'fadyyyyyyyyyyyyyy';
+            $_SESSION['varname'] = $name;
+            header('Location: ChooseDepartment.php');
+          //  echo'fadyyyyyyyyyyyyyy';
           }
           else {
             echo'malyan';

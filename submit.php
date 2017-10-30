@@ -18,9 +18,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT into User( username,email,password ) values ('$name','$email',$password')";
+$sql = "INSERT into User( username,email,password ) values ('$name','$email','$password')";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+
+//header('Location: ChooseDepartment.php');
+header("location:  ChooseDepartment.php?user=$name");
+
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
