@@ -1,8 +1,11 @@
 <?php
-        session_start();
-        $name = $_POST["Name"];
-        $password_1 = $_POST["password"];
 
+
+        session_start();
+		//get data
+		 $name = $_POST["Name"];
+        $pass = $_POST["password"];
+          $pass =md5($pass);
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -10,34 +13,56 @@
 
         //connection to databse
         $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
+       
+
+	   // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-      $sql  ="SELECT * FROM User WHERE username='$name' && password='$password_1'";
-$result=$conn->query($sql);
-       if($result->num_rows > 0 )
-        {
-          $sql_dept_id = "SELECT dept_id FROM USER WHERE username='$name' && password='$password_1' ";
-$result_id = $conn->query($sql_dept_id);
-echo $result_id;
+         $sql  ="SELECT password FROM User WHERE username='$name' ";
+         $get_username=$conn->query($sql);
+       
+	   if($get_username->num_rows < 1 ){   //Indicates username failure
+	 echo 'username invalid'; 
+   } 
+   else{
+   
+		// get password from result
+   $get_password = mysqli_fetch_array($get_username);
+   
+   
+   // Validate that password is correct
+   if($pass != $get_password['password']){
+      //Success! Username and password confirmed
+	  echo 'Wrong Password';
+   }   
+	  else
+	  {		  
+	   //get dept id
+          $sql_dept_id = "SELECT dept_id FROM USER WHERE username='$name' && password='$pass' ";
+ 
+                   $result_id = $conn->query($sql_dept_id)->fetch_object()->dept_id;
+                   
           if( $result_id=="")
           {
-            $_SESSION['varname'] = $name;
+
+			  //no dept id
+            $_SESSION['username1'] = $name;
             header('Location: ChooseDepartment.php');
-          //  echo'fadyyyyyyyyyyyyyy';
+         
+
           }
           else {
-            echo'malyan';
+			  
+			  $_SESSION['username1'] = $name;
+            header('Location: Course.php');
           }
+    
+        }
+   }
+      $conn->close; 
 
-            echo' SUCEES';
-        }
-        else
-        {
-            echo 'The username or password are incorrect!';
-        }
 
 
  ?>

@@ -1,8 +1,10 @@
 
 <?php
+session_start();
+
 //fetching data from user
 $name = $_POST['Name'];
-$password = $_POST['password'];
+$pass= $_POST['password'];
 $email = $_POST['email'];
 
 //connection parameters to database.
@@ -18,11 +20,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT into User( username,email,password ) values ('$name','$email','$password')";
+//encrypt password
+ $pass = md5($pass);
+ 
+$sql = "INSERT into User( username,email,password ) values ('$name','$email','$pass')";
 if ($conn->query($sql) === TRUE) {
 
-//header('Location: ChooseDepartment.php');
-header("location:  ChooseDepartment.php?user=$name");
+$_SESSION['username1'] = $name;
+
+
+header('Location: ChooseDepartment.php');
 
 
 } else {

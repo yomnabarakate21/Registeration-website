@@ -1,10 +1,13 @@
 <?php
 session_start();
-//$user = $_send['name'];
 
-//connection parameters to database.
-$username1 = $_SESSION['varname'];
-echo $username1;
+
+
+
+$username1 = $_SESSION['username1'];
+echo 'Hello    '.$_SESSION['username1'];
+
+=======
 
 
 $servername = "localhost";
@@ -23,26 +26,16 @@ $result =mysqli_query($conn,$query);
 if(isset($_POST['dept_id'])){
 $select = $_POST['dept_id'];
 
-
-
 }
 
-
 $conn->close();
-
-
-
 ?>
 
-<script>
-$("#submit").click(function(){
-  <?php
-$update= "UPDATE `User` SET `dept_id`=[dept_id] WHERE `username`=[username1] ";
-echo $update;
-echo' ana kalb';
-?>
-});
-</script>
+
+
+
+
+
 
 
 
@@ -55,7 +48,9 @@ echo' ana kalb';
     <body>
       <div name="department" class="department">
 <label> choose Department</label>
-<form name= "chooseDepartment" action="ChooseDepartment.php" method="post">
+
+<form name= "chooseDepartment" action="submitDepartment.php" method="post">
+
 <select name="dept_id">
   <?php while($row = mysqli_fetch_array($result)):;?>
     <option value="<?php echo $row[0];?>"> <?php echo $row[1];?> </option>
@@ -64,6 +59,7 @@ echo' ana kalb';
 <br>
 <button id="submit" type="submit"> submit </button>
 </br>
+
 <form>
       </div>
 
