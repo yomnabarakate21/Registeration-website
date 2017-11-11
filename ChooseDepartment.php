@@ -3,9 +3,11 @@ session_start();
 
 
 
+
 $username1 = $_SESSION['username1'];
 echo 'Hello    '.$_SESSION['username1'];
 
+=======
 
 
 $servername = "localhost";
@@ -23,10 +25,14 @@ $result =mysqli_query($conn,$query);
 
 if(isset($_POST['dept_id'])){
 $select = $_POST['dept_id'];
+
 }
 
 $conn->close();
 ?>
+
+
+
 
 
 
@@ -42,7 +48,9 @@ $conn->close();
     <body>
       <div name="department" class="department">
 <label> choose Department</label>
+
 <form name= "chooseDepartment" action="submitDepartment.php" method="post">
+
 <select name="dept_id">
   <?php while($row = mysqli_fetch_array($result)):;?>
     <option value="<?php echo $row[0];?>"> <?php echo $row[1];?> </option>

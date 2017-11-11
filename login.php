@@ -46,10 +46,12 @@
                    
           if( $result_id=="")
           {
+
 			  //no dept id
             $_SESSION['username1'] = $name;
             header('Location: ChooseDepartment.php');
          
+
           }
           else {
 			  
