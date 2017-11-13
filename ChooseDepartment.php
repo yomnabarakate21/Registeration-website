@@ -1,14 +1,8 @@
 <?php
 session_start();
 
-
-
-
 $username1 = $_SESSION['username1'];
 echo 'Hello    '.$_SESSION['username1'];
-
-=======
-
 
 $servername = "localhost";
 $username = "root";
@@ -30,15 +24,6 @@ $select = $_POST['dept_id'];
 
 $conn->close();
 ?>
-
-
-
-
-
-
-
-
-
 
   <html>
     <head>

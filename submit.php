@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 
 //encrypt password
  $pass = md5($pass);
- 
+
 $sql = "INSERT into User( username,email,password ) values ('$name','$email','$pass')";
 if ($conn->query($sql) === TRUE) {
 
