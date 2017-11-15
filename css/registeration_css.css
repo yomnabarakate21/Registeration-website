@@ -1,0 +1,143 @@
+
+
+body{
+  background-image: url('images/image.jpg');
+  background-repeat: no-repeat;
+margin: 0;
+padding:0;
+background-size: cover;
+}
+
+
+h2 {
+    color: white;
+    text-align: center;
+    text-decoration-style: wavy;
+    font-size: 100px;
+    border-radius: 60%;
+    background-color:#654030;
+     width:50%;
+     border-width: thick;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    text-decoration-style: wavy;
+    font-size: 75px;
+    border-radius: 55%;
+    background-color:#654030;
+     width:50%;
+     border-width: thick;
+  margin: 0 auto;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+.container, .department{
+	background: url('images/books.jpg');
+  background-size: cover;
+  box-sizing: border-box;
+  width:50%;
+  height:400px;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+}
+.container .center-left,.department .department_center{
+  float:center;
+  margin-top:50;
+  text-align:center;
+  width:50%;
+  height:400px;
+  box-sizing: border-box;
+}
+.formbox label, .department label {
+  color: black;
+  margin:0;
+  padding:0;
+  font-weight: bold; 
+  font-size:30px;
+  
+ }
+ .formbox select, .department label {
+ box-sizing: border-box;
+ text-align:center;
+  font-weight: bold;
+  font-size:20px;
+ }
+
+.container, .sign_in_container{
+  width:50%;
+  height:400px;
+  margin: 0 auto;
+  background-color: red;
+  border: 2px solid #fff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+}
+.container .left, .sign_in_container .sign_in_left{
+  float:left;
+  width:50%;
+  height: 400px;
+  background: url('images/books.jpg');
+  background-size: cover;
+  box-sizing: border-box;
+}
+.container .right, .sign_in_container .sign_in_right {
+  float:right;
+  width:50%;
+  height:400px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.formbox{
+width:100%;
+padding:10px 10px;
+box-sizing: border-box;
+height: 400px;
+background:#fff;
+}
+.formbox label, .sign_in label {
+  margin:0;
+  padding:0;
+  font-weight: bold;
+  font-size:20px;
+
+}
+.formbox label, .sign_up label {
+  margin:0;
+  padding:0;
+  font-weight: bold;
+  font-size:20px;
+
+}
+input {
+  margin-left: 20px;
+  display: inline-block;
+  width:90%;
+}
+button, input[type=submit]   {
+  background-color:#654030;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  padding:10px;
+  margin-top: 20px;
+  border-width: thick;
+  color:white;
+
+}
+
+
+.my-error-class {
+    color:red;
+
+}
+.my-valid-class {
+color:green;
+}

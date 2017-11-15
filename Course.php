@@ -4,7 +4,7 @@ session_start();
 
 
 $username1 = $_SESSION['username1'];
-echo "hello    ".$_SESSION['username1'];
+//echo "hello    ".$_SESSION['username1'];
 
 
 
@@ -32,6 +32,7 @@ $result =mysqli_query($conn,$query);
 ?>
 
 <html>
+<link rel="stylesheet" type="text/css" href='css/registeration_css.css'>
 <head>
 <style>
 table {
@@ -45,20 +46,22 @@ td, th {
     text-align: left;
     padding: 8px;
 }
-
+tr:nth-child(odd) {
+    background-color: PapayaWhip ;
+}
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #654030   ;
 }
 </style>
-</head>
+</head> 
 <body>
-
+<h3> <?php echo "Hello  ".$username1 ?> </h3>
 <table>
   <tr>
     <th>Course ID</th>
     <th>Course Name</th>
 	<th>Course Desdription</th>
-	<th>instructor Name</th>
+	<th>Instructor Name</th>
 	<th>Credit Hours</th>
 	<th>Department ID</th>
    </TR>
