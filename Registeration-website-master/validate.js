@@ -31,13 +31,13 @@ $( "#sign_in_form" ).validate({
 
 //function for checking if the form is valid or not
 function valid_sign_in(){
-	var name=document.getElementById( "Name" ).innerHTML;
-  if(($( "#sign_in_form" ).valid())==true&& name =="Valid") {
-    alert("true");
+	var pass=document.getElementById( "password_status" ).innerHTML;
+  if(($( "#sign_in_form" ).valid())==true&& pass =="Valid") {
+   
   return true;
   }
     else
-    {   alert ("false");
+    {   alert ("username and password do not match");
       return false;
 }
 }
@@ -45,10 +45,10 @@ function valid_sign_in(){
 
 //function for checking if the form is valid or not
 function valid_sign_up(){
-	var name=document.getElementById( "name_status" ).innerHTML;
+	var name=document.getElementById( "name_status" ).innerHTML.trim();
 
-  if(($( "#sign_up_form" ).valid())==true&& name =="Valid") {
-    alert("Valid");
+  if(($( "#sign_up_form" ).valid())==true && (name =="Valid") ){
+  
   return true;
   }
     else
@@ -59,29 +59,30 @@ function valid_sign_up(){
 }
 
 //mo7awlaa fashaaa lel login
-/*function check_name_password ()
+function checkpassword ()
 {
  var name=document.getElementById( "Name" ).value;
  var pass=document.getElementById( "password" ).value; 
- if(name&&pass)
+ if(pass&&name)
  {
   $.ajax({ 
   type: 'post',
   url: 'registeration.php',
   data: {
-   user_name1:name,
+   name:name,
    pass:pass,
   },
   success: function (response) {
-   $( '#name_status1' ).html(response);
+   $( '#password_status' ).html(response);
    
    if(response=="Valid")	
    {
+	   
     return true;	
    }
    else
    {
-	   
+	     $( '#password_status' ).html("NotValid");
     return false;	
    }
   }
@@ -90,13 +91,13 @@ function valid_sign_up(){
  }
  else
  {
-  $( '#name_status1' ).html("wrong");
+  $( '#password_status' ).html("wrong");
   return false;
  }
  return true;
 }
 
-*/
+
 
 //validating the sign in form
 function checkname()
@@ -118,7 +119,7 @@ function checkname()
    }
    else
    {
-	   
+	   $( '#name_status' ).html("NotValid");
     return false;	
    }
   }
@@ -126,7 +127,7 @@ function checkname()
  }
  else
  {
-  $( '#name_status' ).html("wrong");
+  $( '#name_status' ).html("Valid");
   return false;
  }
 
